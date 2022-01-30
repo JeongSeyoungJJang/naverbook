@@ -1,0 +1,18 @@
+.mycss:hover {
+    background-color: aqua;
+    cursor: pointer;
+    height: 300px;
+
+}
+
+.mycss {
+    transition: all 1s ease-in-out;
+}
+
+.imagecss {
+    width: 100px;
+}
+
+.mycss:hover~.imagecss {
+    width: 1200px;
+}

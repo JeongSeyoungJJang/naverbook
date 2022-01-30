@@ -1,0 +1,17 @@
+{
+  "name": "whatever",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cron": "^1.8.2",
+    "node-fetch": "^2.3.0",
+    "redis": "^4.0.2"
+  }
+}

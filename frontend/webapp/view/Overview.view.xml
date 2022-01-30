@@ -1,0 +1,53 @@
+<mvc:View
+    controllerName="frontend.controller.Overview"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.f"
+>
+
+				<f:DynamicPage id="dynamicPage">
+					<!-- <f:title>
+						<f:DynamicPageTitle>
+							<f:heading>
+								<Title text="타이틀 입니다." />
+							</f:heading>
+						</f:DynamicPageTitle>
+					</f:title> -->
+					<f:content>
+						<List  headerText="Custom Header" items="{book>/}" >
+							<CustomListItem class="mycss" press="handleItemPress" type="Active">
+								<HBox >
+									<Image src="{book>image}" class="imagecss sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom" />
+									<VBox alignItems="Center" justifyContent="Center">
+										<Text text="{book>title}" />
+										<Text text="{book>author}" />
+									</VBox>
+								</HBox>
+							</CustomListItem>
+						</List>
+						<!-- <Table id="book-table"
+								inset="false"
+								items="{book>/}">
+									<columns>
+										<Column width="auto">
+											<Text text="Product" />
+										</Column>
+										<Column	hAlign="End">
+											<Text text="Price" />
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem type="Navigation" press="onListItemPress">
+											<cells>
+												<Text text="{book>title}"/>
+												<Text text="{book>author}"/>
+												
+											</cells>
+										</ColumnListItem>
+									</items>
+						</Table> -->
+					</f:content>
+				</f:DynamicPage>
+</mvc:View>

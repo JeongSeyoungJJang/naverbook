@@ -1,0 +1,39 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    controllerName="frontend.controller.Detail">
+    <f:DynamicPage>
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Detail 타이틀 입니다."/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="This is a subheading"/>
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Label text="This is a subheading"/>
+                </f:snappedContent>                
+                <f:content>
+                    <Title text="Detail 콘텐츠입니다." />
+                </f:content>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <layout:HorizontalLayout allowWrapping="true">
+                    <Text text="테스트1" />
+                </layout:HorizontalLayout>
+                <layout:HorizontalLayout allowWrapping="true">
+                    <Text text="테스트2" />
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <Text text="{/description}" />
+        </f:content>
+    </f:DynamicPage>
+</mvc:View>
