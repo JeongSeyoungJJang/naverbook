@@ -13,11 +13,19 @@ const PORT = 3001;
 app.use(cors({origin: "http://localhost:8080"}));
 
 app.get("/book", async(req, res) =>{
-    const books = JSON.parse(await client.get("books"));
-    return res.send({
-        success: true,
-        value: books
-    })
+    try {
+        const isExist = await client.get("books");
+        if(!isExist) console.log("캐싱된 책 정보가 없습니다.");
+        const books = JSON.parse(await client.get("books"));
+        console.log(`책 ${books.length}건`);
+        return res.send({
+            success: true,
+            value: books
+        })
+    } catch (error) {
+        console.log(error);
+        return res.send({success: false, message: error.message});
+    }
 })
 
 app.listen(PORT, () => {

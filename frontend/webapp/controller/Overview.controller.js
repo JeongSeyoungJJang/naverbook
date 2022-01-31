@@ -10,7 +10,10 @@ sap.ui.define([
 
 		return Controller.extend("frontend.controller.Overview", {
 			onInit: function () {
-				this._getBookData();
+				if(!this.getView().getModel("book")){
+                    var bookModel = this.getOwnerComponent().getModel("book");
+                    this.getView().setModel(bookModel, "book")
+                }
 			},
 
 
@@ -19,19 +22,7 @@ sap.ui.define([
 			},
 
 
-			_getBookData: function() {
-                var that = this;
-				var view = this._getView();
-				return $.ajax({
-					url: "http://localhost:3001/book",
-					success: function(res) {
-						that.getOwnerComponent().setModel(new JSONModel(res.value),"book")
-					},
-					error: function(err) {
-						console.log(err)
-					}
-				})
-			},
+
 
 			handleItemPress: function(event) {
                 var bindingPath = event.getSource().getBindingContextPath().split("/").reverse()[0];

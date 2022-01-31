@@ -6,8 +6,13 @@ sap.ui.define([
         "use strict";
         return Controller.extend("frontend.controller.Detail", {
             onInit: function() {
+
                 var oRouter = this.getOwnerComponent().getRouter();
                 oRouter.getRoute("detail").attachPatternMatched(this._oRouterMatched, this);
+                // if(!this.getView().getModel("book")){
+                //     var bookModel = this.getOwnerComponent().getModel("book");
+                //     this.getView().setModel(bookModel, "book")
+                // }
 
             },
 

@@ -1,0 +1,6 @@
+applications:
+- name: cfenv
+  memory: 128M
+  path: .
+  buildpacks:
+    - nodejs_buildpack

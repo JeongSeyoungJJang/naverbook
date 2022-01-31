@@ -1,8 +1,9 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"frontend/model/models"
-], function (UIComponent, Device, models) {
+	"frontend/model/models",
+	"sap/ui/model/json/JSONModel"
+], function (UIComponent, Device, models, JSONModel) {
 	"use strict";
 
 	return UIComponent.extend("frontend.Component", {
@@ -25,6 +26,22 @@ sap.ui.define([
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
-		}
+
+			this._getBookData();
+		},
+
+
+		_getBookData: function() {
+			var that = this;
+			return $.ajax({
+				url: "http://localhost:3001/book",
+				success: function(res) {
+					that.setModel(new JSONModel(res.value),"book")
+				},
+				error: function(err) {
+					console.log(err)
+				}
+			})
+		},
 	});
 });

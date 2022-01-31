@@ -4,6 +4,7 @@
     displayBlock="true"
     xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
     controllerName="frontend.controller.Detail">
     <f:DynamicPage>
         <f:title>
@@ -15,7 +16,7 @@
                     <Label text="This is a subheading"/>
                 </f:expandedContent>
                 <f:snappedContent>
-                    <Label text="This is a subheading"/>
+                    <Label text="This is a subheading11"/>
                 </f:snappedContent>                
                 <f:content>
                     <Title text="Detail 콘텐츠입니다." />
@@ -25,15 +26,20 @@
         <f:header>
             <f:DynamicPageHeader>
                 <layout:HorizontalLayout allowWrapping="true">
-                    <Text text="테스트1" />
+                   <Image src="{/image}" class="imagecss sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom" />
+                   <Image src="{/image}" class="imagecss sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom" />
+                   <!-- <Text text="테스트" /> -->
                 </layout:HorizontalLayout>
                 <layout:HorizontalLayout allowWrapping="true">
-                    <Text text="테스트2" />
+                    <Image src="{/image}" class="imagecss sapUiSmallMarginBeginEnd sapUiSmallMarginTopBottom" />
                 </layout:HorizontalLayout>
             </f:DynamicPageHeader>
         </f:header>
         <f:content>
-            <Text text="{/description}" />
+            <layout:HorizontalLayout>
+                <!-- <core:HTML content="{/description}"/> -->
+                <FormattedText htmlText="{/description}"/>
+            </layout:HorizontalLayout>
         </f:content>
     </f:DynamicPage>
 </mvc:View>

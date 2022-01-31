@@ -1,0 +1,6 @@
+applications:
+- name: book
+  memory: 128M
+  path: ./
+  buildpacks:
+    - nodejs_buildpack
